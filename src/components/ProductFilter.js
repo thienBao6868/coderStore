@@ -2,6 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { FMultiCheckbox, FRadioGroup } from "./form";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 
+
 export const SORT_BY_OPTIONS = [
   { value: "featured", label: "Featured" },
   { value: "newest", label: "Newest" },
@@ -25,6 +26,8 @@ export const FILTER_PRICE_OPTIONS = [
 ];
 
 function ProductFilter({ resetFilter }) {
+  // phan sua loi, khi click learall thi set lai resetFilter về default value
+   //const [resetToDefaulst, setResetToDefaulst] = useState()
   return (
     <Stack spacing={3} sx={{ p: 3, width: 250 }}>
       <Stack spacing={1}>
@@ -66,7 +69,8 @@ function ProductFilter({ resetFilter }) {
           type="submit"
           color="inherit"
           variant="outlined"
-          onClick={resetFilter}
+          // handle Click ( khi click vào clear all sẽ reset lại các filter)
+          onClick={()=>resetFilter()}
           startIcon={<ClearAllIcon />}
         >
           Clear All

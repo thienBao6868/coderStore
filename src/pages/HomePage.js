@@ -25,6 +25,7 @@ function HomePage() {
   const methods = useForm({
     defaultValues,
   });
+  console.log(methods,"den tu homepage")
   const { watch, reset } = methods;
   const filters = watch();
   const filterProducts = applyFilter(products, filters);
